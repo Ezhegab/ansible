@@ -1,0 +1,5 @@
+---
+-    name: Add user authorized key
+     authorized_key:
+               user: devops
+               key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
