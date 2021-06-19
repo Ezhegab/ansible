@@ -20,8 +20,6 @@
          source: pull
          pull:
              platform: amd64
-         volumes:  
-             - ./tasks/grafana:/etc/nginx/sites-available
          
 -    name: Start a container nginx with a command
      docker_container:
@@ -29,6 +27,8 @@
          image: nginx
          ports:
              - "80:80"
+         volumes:  
+             - ./tasks/grafana:/etc/nginx/sites-available    
 
 #-    name: Add a container to a network, leaving existing containers connected
 #     docker_network:
