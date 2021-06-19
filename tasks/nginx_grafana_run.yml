@@ -27,8 +27,8 @@
          image: nginx
          ports:
              - "80:80"
-         volumes:  
-             - /etc/ansible/nginx:/etc/nginx    
+#         volumes:  
+#             - /etc/ansible/nginx:/etc/nginx    
 
 #-    name: Add a container to a network, leaving existing containers connected
 #     docker_network:
