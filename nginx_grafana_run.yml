@@ -1,50 +1,42 @@
 ---
--    name: Pull an image
+-    name: Pull an image of grafana
      community.docker.docker_image:
          name: grafana/grafana
          source: pull
          pull:
              platform: amd64
 
--    name: Start a container nginx with a command
+-    name: Start a container grafana with a command
      community.docker.docker_container:
-         name: sleepytwo
+         name: my_grafana
          image: grafana/grafana
          ports:
              - "3000:3000"
          command: ["sleep", "infinity"]
 
--    name: Give insecure permissions to an existing file
-     ansible.builtin.file:
-          path: /etc/ansible/startup.sh
-          owner: root
-          group: root
-          mode: '1777'
-
-
--    name: Docker image build
-     docker_image:
-         build:
-             dockerfile: Dockerfile
-             path: /etc/ansible/
+-    name: Pull an image of nginx
+     community.docker.docker_image:
          name: nginx
-         source: build
-         state: present
+         source: pull
+         pull:
+             platform: amd64
+         volumes:  
+             - ./grafana:/etc/nginx/sites-available
          
--    name: Start a container with a command
+-    name: Start a container nginx with a command
      community.docker.docker_container:
-         name: sleepy
+         name: my_nginx
          image: nginx
          ports:
              - "80:80"
 
--    name: Add a container to a network, leaving existing containers connected
-     docker_network:
-         name: network_one
-         connected:
-             - sleepy
-             - sleepytwo
-         appends: yes
+#-    name: Add a container to a network, leaving existing containers connected
+#     docker_network:
+#         name: network_one
+#         connected:
+#             - sleepy
+#             - sleepytwo
+#         appends: yes
    
 
 
