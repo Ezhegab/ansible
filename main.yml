@@ -6,7 +6,7 @@
          -    import_tasks: tasks/setup_docker.yml
          -    import_tasks: tasks/create_user.yml
          -    import_tasks: tasks/authorized_key.yml
-         -    import_tasks: ./nginx_grafana_run.yml
+         -    import_tasks: tasks/nginx_grafana_run.yml
          -    import_tasks: tasks/enable_firewall.yml
          -    import_tasks: tasks/ssh_settings.yml
        
