@@ -21,7 +21,7 @@
          pull:
              platform: amd64
          volumes:  
-             - ./grafana:/etc/nginx/sites-available
+             - ./tasks/grafana:/etc/nginx/sites-available
          
 -    name: Start a container nginx with a command
      community.docker.docker_container:
