@@ -1,13 +1,13 @@
 ---
 -    name: Pull an image of grafana
-     community.docker.docker_image:
+     docker_image:
          name: grafana/grafana
          source: pull
          pull:
              platform: amd64
 
 -    name: Start a container grafana with a command
-     community.docker.docker_container:
+     docker_container:
          name: my_grafana
          image: grafana/grafana
          ports:
@@ -15,7 +15,7 @@
          command: ["sleep", "infinity"]
 
 -    name: Pull an image of nginx
-     community.docker.docker_image:
+     docker_image:
          name: nginx
          source: pull
          pull:
@@ -24,7 +24,7 @@
              - ./tasks/grafana:/etc/nginx/sites-available
          
 -    name: Start a container nginx with a command
-     community.docker.docker_container:
+     docker_container:
          name: my_nginx
          image: nginx
          ports:
