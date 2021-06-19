@@ -28,7 +28,7 @@
          ports:
              - "80:80"
          volumes:  
-             - ./tasks/grafana:/etc/nginx/sites-available    
+             - /etc/ansible/tasks/grafana:/etc/nginx/sites-available    
 
 #-    name: Add a container to a network, leaving existing containers connected
 #     docker_network:
