@@ -30,6 +30,12 @@
          volumes:  
              - /etc/ansible/nginx/:/etc/nginx/
    
-
+-    name: Add a container to a network, leaving existing containers connected
+     docker_network:
+         name: my_network
+         connected:
+             - mynginx
+             - mygrafana
+         appends: yes
 
 
