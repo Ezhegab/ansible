@@ -1,4 +1,8 @@
 ---
+-    name: Create a network
+     docker_network:
+         name: my_network
+
 -    name: Pull an image of grafana
      docker_image:
          name: grafana/grafana
@@ -12,6 +16,8 @@
          image: grafana/grafana
          ports:
              - "3000:3000"
+         networks: 
+             - name: my_network              
          command: ["sleep", "infinity"]
 
 -    name: Pull an image of nginx
@@ -27,15 +33,17 @@
          image: nginx
          ports:
              - "80:80"
+         networks: 
+             - name: my_network              
          volumes:  
              - /etc/ansible/nginx/:/etc/nginx/
    
--    name: Add a container to a network, leaving existing containers connected
-     docker_network:
-         name: my_network
-         connected:
-             - mynginx
-             - mygrafana
-         appends: yes
+#-    name: Add a container to a network, leaving existing containers connected
+#     docker_network:
+#         name: my_network
+#         connected:
+#             - mynginx
+#             - mygrafana
+#         appends: yes
 
 
