@@ -28,7 +28,9 @@
          ports:
              - "80:80"
          volumes:  
-             - /etc/ansible/nginx:/etc/nginx
+          #   - /etc/ansible/nginx:/etc/nginx
+             - /etc/ansible/nginx/sites-available/:/etc/nginx/sites-available/ 
+
             
 #-    name: Add a container to a network, leaving existing containers connected
 #     docker_network:
