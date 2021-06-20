@@ -29,16 +29,6 @@
              - "80:80"
          volumes:  
              - /etc/ansible/nginx/:/etc/nginx/
-          #   - /etc/ansible/nginx/sites-enabled/:/etc/nginx/sites-enabled/ 
-
-            
-#-    name: Add a container to a network, leaving existing containers connected
-#     docker_network:
-#         name: network_one
-#         connected:
-#             - sleepy
-#             - sleepytwo
-#         appends: yes
    
 
 
