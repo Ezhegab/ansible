@@ -8,7 +8,7 @@
 
 -    name: Start a container grafana with a command
      docker_container:
-         name: my_grafana
+         name: mygrafana
          image: grafana/grafana
          ports:
              - "3000:3000"
@@ -23,7 +23,7 @@
          
 -    name: Start a container nginx with a command
      docker_container:
-         name: my_nginx
+         name: mynginx
          image: nginx
          ports:
              - "80:80"
