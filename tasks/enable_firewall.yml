@@ -15,3 +15,11 @@
          port: '80'
          proto: tcp
 
+-    name: Insert a rule on line 1
+     ansible.builtin.iptables:
+        chain: FORWARD
+        protocol: all
+        destination_port: 3000
+        jump: DROP
+        action: insert
+        rule_num: 1
