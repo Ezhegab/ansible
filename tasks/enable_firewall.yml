@@ -17,7 +17,7 @@
 
 -    name: Insert a rule on line 1
      ansible.builtin.iptables:
-        chain: DOCKER-USER
+        chain: INPUT
         protocol: tcp
         destination_port: 3000
         jump: DROP
