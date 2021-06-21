@@ -26,7 +26,7 @@
         chain: INPUT
         protocol: tcp
         destination_port: 3000
-        reject_with: potomuchta
+        reject_with: icmp-port-unreachable
         #jump: DROP
         action: insert
         rule_num: 1
