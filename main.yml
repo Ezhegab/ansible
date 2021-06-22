@@ -21,7 +21,7 @@
         -    name: restart ssh
              systemd:
                  name: ssh
-                 state: restart
+                 state: restarted
                  enables: yes
              
              #ansible.builtin.service:
