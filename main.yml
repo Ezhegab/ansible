@@ -19,9 +19,14 @@
                  enabled: yes
 
         -    name: restart ssh
-             ansible.builtin.service:
-                 name: sshd
-                 state: restarted
+             systemd:
+                 name: ssh
+                 state: restart
+                 enables: yes
+             
+             #ansible.builtin.service:
+              #   name: sshd
+               #  state: restarted
              #service:
               #   name=sshd
 
