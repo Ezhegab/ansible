@@ -12,7 +12,7 @@
        
     vars: 
     eth_int:
-         -    {{ ansible_default_ipv4.interface }}
+         -    "{{ ansible_default_ipv4.interface }}"
     
     handlers:
         -    name: Start docker on boot
