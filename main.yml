@@ -11,8 +11,7 @@
          -    import_tasks: tasks/ssh_settings.yml
        
     vars: 
-        eth_int:
-               -    "{{ ansible_default_ipv4.interface }}"
+        eth_int: "{{ ansible_default_ipv4.interface }}"
     
     handlers:
         -    name: Start docker on boot
