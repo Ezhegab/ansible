@@ -23,11 +23,6 @@
                  name: ssh
                  state: restarted
                  enables: yes
-             
-             #ansible.builtin.service:
-              #   name: sshd
-               #  state: restarted
-             #service:
-              #   name=sshd
+
 
 
