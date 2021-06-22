@@ -23,10 +23,13 @@
 
 -    name: Insert a rule on line 1
      ansible.builtin.iptables:
-        chain: INPUT
+        chain: DOCKER-USER
         protocol: tcp
         destination_port: 3000
-        reject_with: icmp-port-unreachable
-        #jump: DROP
+        in_interface: {{ ansible_default_ipv4.interface }}
+        jump: DROP
         action: insert
         rule_num: 1
+            
+            
+            
