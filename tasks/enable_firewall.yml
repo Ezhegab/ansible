@@ -26,7 +26,7 @@
         chain: DOCKER-USER
         protocol: tcp
         destination_port: 3000
-        in_interface: {{ ansible_default_ipv4.interface }}
+        in_interface: eth_int
         jump: DROP
         action: insert
         rule_num: 1
