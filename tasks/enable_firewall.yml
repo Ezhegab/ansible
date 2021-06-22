@@ -15,13 +15,7 @@
          port: '80'
          proto: tcp
          
-#-    name: Deny 3000 port tcp
-#     ufw:
-#         rule: deny
-#         port: '3000'
-#         proto: tcp
-
--    name: Insert a rule on line 1
+-    name: Insert a rule on line 1 in DOCKER-USER to DROP all on port 3000
      ansible.builtin.iptables:
         chain: DOCKER-USER
         protocol: tcp
