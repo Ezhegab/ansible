@@ -1,8 +1,9 @@
 ---
-- name: ansible create directory example
-     file:
+-    name: Create a directory if it does not exist
+     ansible.builtin.file:
                path: ~/.ssh
                state: directory
+               mode: '0644'
 
 -    name: Generate an OpenSSH keypair with the default values (4096 bits, rsa)
      openssh_keypair:
