@@ -7,7 +7,7 @@
 
 -    name: Generate an OpenSSH keypair with the default values (4096 bits, rsa)
      openssh_keypair:
-               path: /home/devops/.ssh/id_rsa.pub
+               path: /home/devops/.ssh/id_rsa
     
 -    name: Add user authorized key
      authorized_key:
