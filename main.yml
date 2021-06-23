@@ -22,7 +22,7 @@
              systemd:
                  name: ssh
                  state: restarted
-                 enables: yes
+                 enabled: yes
 
 
 
