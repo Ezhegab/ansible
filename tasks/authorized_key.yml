@@ -1,4 +1,9 @@
 ---
+- name: ansible create directory example
+     file:
+               path: ~/.ssh
+               state: directory
+
 -    name: Generate an OpenSSH keypair with the default values (4096 bits, rsa)
      openssh_keypair:
                path: ~/.ssh/id_rsa.pub
