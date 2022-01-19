@@ -1,0 +1,29 @@
+---
+-    name: Enable ufw
+     ufw:
+         state: enabled
+         policy: allow
+
+-    name: Allow OpenSSH 22port
+     ufw:
+         rule: allow
+         name: OpenSSH
+
+-    name: Allow 80 port tcp
+     ufw:
+         rule: allow
+         port: '80'
+         proto: tcp
+         
+-    name: Insert a rule on line 1 in DOCKER-USER
+     ansible.builtin.iptables:
+        chain: DOCKER-USER
+        protocol: tcp
+        destination_port: 3000
+        in_interface: "{{ ansible_default_ipv4.interface }}"
+        jump: DROP
+        action: insert
+        rule_num: 1
+            
+            
+            

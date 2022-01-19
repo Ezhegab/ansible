@@ -1,0 +1,10 @@
+---
+-    name: Create devops user
+     user:
+           name: devops
+           create_home: yes
+           groups: 
+               - docker
+           password: '*'
+           state: present
+           

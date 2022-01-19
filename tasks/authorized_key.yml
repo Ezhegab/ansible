@@ -1,0 +1,15 @@
+---
+#-    name: Create a directory if it does not exist
+#     ansible.builtin.file:
+#               path: /home/devops/.ssh
+#               state: directory
+#               mode: '0644'
+
+#-    name: Generate an OpenSSH keypair with the default values (4096 bits, rsa)
+#     openssh_keypair:
+#               path: /home/devops/.ssh/id_rsa
+    
+-    name: Add user authorized key
+     authorized_key:
+               user: devops
+               key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"

@@ -1,0 +1,42 @@
+---
+-    name: Create a network
+     docker_network:
+         name: my_network
+
+-    name: Pull an image of grafana
+     docker_image:
+         name: grafana/grafana
+         source: pull
+         pull:
+             platform: amd64
+
+-    name: Start a container grafana with a command
+     docker_container:
+         name: mygrafana
+         image: grafana/grafana
+         ports:
+             - "3000:3000"
+         networks: 
+             - name: my_network              
+         command: ["sleep", "infinity"]
+
+-    name: Pull an image of nginx
+     docker_image:
+         name: nginx
+         source: pull
+         pull:
+             platform: amd64
+         
+-    name: Start a container nginx with a command
+     docker_container:
+         name: mynginx
+         image: nginx
+         ports:
+             - "80:80"
+         networks: 
+             - name: my_network              
+         volumes:  
+             - /etc/ansible/nginx/:/etc/nginx/
+
+
+
